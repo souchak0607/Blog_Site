@@ -16,9 +16,18 @@
 
 <body>
     <nav>
-        <a href="/">🏠</a>|
-        <a href="/about">🅰</a>|
-        <a href="/blogs">📃</a>
+        <a href="/">
+           <span role="img" aria-label="Home" title="Home">🏠</span> 
+        </a>|
+        <a href="/about">
+            <span role="img" aria-label="About" title="About">🅰</span> 
+        </a>|
+        <a href="{% url 'blogs:list' %}">
+            <span role="img" aria-label="Blogs" title="Blogs">📃</span> 
+        </a>|
+        <a href="{% url 'users:register' %}">
+            <span role="img" aria-label="User Registration" title="User Registration">🤘</span> 
+        </a>
     </nav>
     <main>
         {% block content %}
