@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Blog
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def blog_list(request):
@@ -9,5 +10,9 @@ def blog_list(request):
 def blog_page(request, slug):
     blogs = Blog.objects.get(slug=slug)
     return render(request, 'blogs/blog_page.html', {'blog': blogs})
+
+@login_required(login_url="/users/login")
+def blog_new(request):
+    return render(request, 'blogs/blog_new.html')
 
 
