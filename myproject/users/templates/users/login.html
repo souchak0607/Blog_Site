@@ -7,7 +7,7 @@
 
 {%block content%}
     <h1>User Login</h1>
-    <form class="form-width-validation" action="/users/login/" method="post">
+    <form class="form-width-validation" action="{% url 'users:login' %}" method="post">
         {% csrf_token %}
         {{form}}
         {% if request.GET.next %}
