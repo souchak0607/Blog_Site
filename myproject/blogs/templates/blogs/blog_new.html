@@ -8,7 +8,7 @@
 {%block content%}
     <section>
         <h1>New Blog</h1>
-        <form class="form-with-validation" action="{%url 'blogs:new-post' %}" method="post" enctype="multi/form-data">
+        <form class="form-with-validation" action="{%url 'blogs:new-post' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form }}
             <button class="form-submit">Add Blog</button>
